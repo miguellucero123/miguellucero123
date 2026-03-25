@@ -1,71 +1,62 @@
-# 🌤️ WeatherLocal Copiapó
+# WeatherLocal Copiapó
 
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
-[![Machine Learning](https://img.shields.io/badge/ML-Scikit--learn-green.svg)](https://scikit-learn.org/)
-[![Data Analysis](https://img.shields.io/badge/Data-Pandas-red.svg)](https://pandas.pydata.org/)
+[![Scikit-learn](https://img.shields.io/badge/ML-Scikit--learn-green.svg)](https://scikit-learn.org/)
 
-**Sistema integral de análisis meteorológico hiperlocalizado con inteligencia artificial para Copiapó, Región de Atacama**
+Sistema integral de análisis meteorológico hiperlocalizado con aprendizaje automático para la Región de Atacama, Chile.
 
-Desarrollado por **Miguel Lucero** | Meteorólogo con 5+ años de experiencia
-
----
-
-## 👨‍💼 Sobre Mí
-
-Soy **meteorólogo especializado en análisis de datos climáticos e inteligencia artificial**. Con más de 5 años de experiencia en meteorología, he desarrollado una pasión por transformar datos complejos en soluciones tecnológicas innovadoras.
-
-**Especialización:**
-- 🌦️ Meteorología y análisis climático
-- 📊 Análisis avanzado de datos
-- 🤖 Machine Learning aplicado
-- 💻 Desarrollo web frontend
-- 📈 Visualización interactiva de datos
+**Autor:** Miguel Lucero — Meteorólogo, analista de datos climáticos
 
 ---
 
-## 📊 Características Principales
+## Descripción
 
-### 🗺️ Mapa Interactivo Folium
-- 12 estaciones meteorológicas geolocalizadas en la región de Atacama
-- Información en tiempo real al hacer clic
-- Códigos de color según Índice de Calidad del Aire (ICA)
-- Navegación fluida con zoom integrado
+WeatherLocal Copiapó integra datos de una red de 12 estaciones meteorológicas distribuidas estratégicamente en la Región de Atacama. El sistema combina análisis estadístico exploratorio, visualización geoespacial interactiva y un modelo de clasificación supervisada para la predicción del Índice de Calidad del Aire (ICA) con un horizonte de 48 horas.
 
-### 📈 Visualizaciones Profesionales (4 Gráficos)
-- 📊 **Temperatura por estación** - Análisis comparativo entre estaciones
-- 💨 **Humedad relativa por estación** - Distribución espacial
-- 🌪️ **Velocidad del viento por estación** - Intensidad y patrones
-- 🏭 **Índice de Calidad del Aire (ICA)** - Estado y alertas
+El proyecto está diseñado para ser reproducible, documentado y escalable, siguiendo buenas prácticas de ciencia de datos aplicada a la meteorología regional.
 
-### 🤖 Modelo Machine Learning Avanzado
+---
+
+## Funcionalidades Principales
+
+### Visualización geoespacial
+- Mapa interactivo (Folium/OpenStreetMap) con 12 estaciones geolocalizadas
+- Codificación cromática basada en el ICA (estándar CONAMA Chile / EPA USA)
+- Información meteorológica en tiempo real por estación al interactuar con el mapa
+
+### Análisis estadístico
+- Estadísticas descriptivas por estación: media, desviación estándar, mínimo, máximo
+- Análisis de distribuciones y detección de valores atípicos
+- Matrices de correlación entre variables meteorológicas
+
+### Visualizaciones analíticas
+Cuatro gráficos comparativos entre estaciones:
+1. Temperatura del aire (°C)
+2. Humedad relativa (%)
+3. Velocidad del viento (m/s)
+4. Índice de Calidad del Aire (ICA)
+
+### Modelo de aprendizaje automático
 - **Algoritmo:** Random Forest Classifier
-- **Precisión:** ~84%
-- **Objetivo:** Predicción de contaminación atmosférica
-- **Horizonte:** Pronósticos a 48 horas
-- **Variables:** Temperatura, Humedad, Velocidad del viento
-
-### 📱 Interfaz Responsiva y Profesional
-- Diseño moderno con gradientes visuales
-- Tablas interactivas con efectos hover
-- Compatible con dispositivos móviles
-- Datos meteorológicos en tiempo real
-- Pronósticos y predicciones integradas
+- **Variables predictoras:** temperatura, humedad relativa, velocidad del viento
+- **Variable objetivo:** clasificación binaria de contaminación (ICA > 100)
+- **Métricas de evaluación:** precisión ~84%, recall ~78%, F1-score ~81%
+- **Horizonte de predicción:** 48 horas
 
 ---
 
-## 🚀 Inicio Rápido
+## Instalación
 
-### Requisitos Previos
-```
-Python 3.8+
-pip o conda
-Git
-~500 MB de espacio en disco
-```
+### Requisitos previos
 
-### Instalación
+- Python 3.8 o superior
+- pip o conda
+- Git
+- ~500 MB de espacio en disco
+
+### Pasos
 
 ```bash
 # 1. Clonar el repositorio
@@ -80,349 +71,199 @@ conda activate weatherlocal
 pip install -r requirements.txt
 ```
 
-### Uso
+---
 
-**Opción A: Jupyter Notebook (Recomendado)**
+## Uso
+
+**Opción A — Jupyter Notebook (recomendado):**
 ```bash
 jupyter notebook ejercicio_23.ipynb
-# Ejecuta las celdas en orden (Shift + Enter)
+# Ejecutar las celdas en orden secuencial (Shift + Enter)
 ```
 
-**Opción B: Ver análisis HTML directamente**
+**Opción B — Análisis HTML estático:**
 ```bash
-# Abre en tu navegador:
-open weatherlocal_completo.html  # macOS
-start weatherlocal_completo.html  # Windows
-xdg-open weatherlocal_completo.html  # Linux
+# Abrir directamente en el navegador:
+open weatherlocal_completo.html        # macOS
+start weatherlocal_completo.html       # Windows
+xdg-open weatherlocal_completo.html    # Linux
 ```
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 WeatherLocal-Copiapó/
-│
-├── 📄 Documentación
-│   ├── README.md                    (este archivo)
-│   ├── CONTRIBUTING.md              (guía de contribución)
-│   ├── CHANGELOG.md                 (historial de cambios)
-│   └── LICENSE                      (licencia MIT)
-│
-├── 📊 Análisis y Datos
-│   ├── ejercicio_23.ipynb           (Jupyter Notebook principal)
-│   ├── weatherlocal_completo.html   (análisis HTML interactivo)
-│   └── requirements.txt             (dependencias Python)
-│
-├── ⚙️ Configuración
-│   ├── .gitignore                   (archivos ignorados)
-│   └── .github/workflows/           (GitHub Actions)
-│
-└── 📁 Carpetas adicionales
-    ├── Ejercicio2/                  (páginas HTML básicas)
-    ├── Ejercicio3/                  (páginas informativas)
-    └── assets/                      (imágenes y estilos)
+├── ejercicio_23.ipynb              # Notebook principal de análisis
+├── weatherlocal_completo.html      # Informe HTML interactivo
+├── requirements.txt                # Dependencias Python
+├── README.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── LICENSE
+├── .gitignore
+├── .github/workflows/              # Integración continua (GitHub Actions)
+├── Ejercicio2/                     # Páginas HTML auxiliares
+├── Ejercicio3/                     # Páginas informativas
+└── assets/                         # Recursos estáticos
 ```
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Dependencias
 
-| Tecnología | Versión | Propósito |
-|-----------|---------|----------|
-| **Python** | 3.8+ | Lenguaje principal |
-| **Jupyter Notebook** | 1.0+ | Entorno interactivo |
-| **Pandas** | 1.5+ | Procesamiento de datos meteorológicos |
-| **NumPy** | 1.22+ | Computación numérica y análisis |
-| **Folium** | 0.14+ | Mapas interactivos geolocalizados |
-| **Scikit-learn** | 1.0+ | Machine Learning y predicciones |
-| **Matplotlib** | 3.5+ | Gráficos estáticos profesionales |
-| **Seaborn** | 0.12+ | Visualizaciones estadísticas |
-| **HTML5/CSS3** | - | Interfaz web responsiva |
+| Paquete | Versión mínima | Uso |
+|---|---|---|
+| pandas | 1.5 | Procesamiento de datos tabulares |
+| numpy | 1.22 | Computación numérica |
+| folium | 0.14 | Mapas interactivos georreferenciados |
+| scikit-learn | 1.0 | Modelado de aprendizaje automático |
+| matplotlib | 3.5 | Visualización estática |
+| seaborn | 0.12 | Visualización estadística |
+| jupyter | 1.0 | Entorno de análisis interactivo |
 
----
-
-## 📊 Análisis Incluido
-
-### 1. Análisis Estadístico Completo
-- ✓ Máximos, mínimos y valores promedio por estación
-- ✓ Desviación estándar y medidas de dispersión
-- ✓ Análisis de distribuciones de datos
-- ✓ Correlaciones entre variables meteorológicas
-- ✓ Detección de anomalías y outliers
-
-### 2. Modelado Machine Learning
-- ✓ Algoritmo Random Forest Classifier
-- ✓ Entrenamiento con datos históricos
-- ✓ Predicción de contaminación atmosférica
-- ✓ Probabilidades de ocurrencia
-- ✓ Matriz de confusión y métricas de rendimiento
-
-### 3. Pronósticos Meteorológicos
-- ✓ Proyecciones de temperatura
-- ✓ Predicción de humedad relativa
-- ✓ Estimación de velocidad del viento
-- ✓ Alertas por Índice de Calidad del Aire
-
-### 4. Visualización Interactiva
-- ✓ Mapas Folium con 12 estaciones geolocalizadas
-- ✓ Gráficos de barras comparativos
-- ✓ Series temporales de datos históricos
-- ✓ Heatmaps de correlaciones
-- ✓ Tablas interactivas con filtros
+Véase `requirements.txt` para la lista completa con versiones exactas.
 
 ---
 
-## 📍 Cobertura Geográfica
+## Red de Estaciones
 
-### 12 Estaciones Estratégicamente Distribuidas
+La red cubre un gradiente altitudinal y climático representativo de la región, desde la costa hasta la precordillera:
 
-| Estación | Tipo | Descripción |
-|----------|------|------------|
-| 🏙️ Copiapó Centro | Urbana | Zona metropolitana principal |
-| 🚢 Caldera Puerto | Costera | Influencia marina |
-| 🏔️ Tierra Amarilla | Interior | Altiplano transitorio |
-| ⛰️ Cerro Empeñada | Transicional | Borde costero interno |
-| 🌊 Punta de Choros | Costera | Litoral norte |
-| 🏜️ La Higuera | Interior | Zona interior |
-| 🗻 Nantoco | Interior | Precordillera |
-| 🏭 Zona Industrial | Urbana | Polígono industrial |
-| 🌾 Pajonales | Transicional | Zona mixta |
-| 🏜️ Atacama Sur | Interior | Sur región |
-| 🌊 Chañaral | Costera | Zona norte costera |
-| 🔄 Los Loros | Transicional | Zona de transición |
+| Estación | Contexto geográfico |
+|---|---|
+| Copiapó Centro | Zona metropolitana principal |
+| Caldera Puerto | Influencia marina directa |
+| Tierra Amarilla | Altiplano transitorio interior |
+| Cerro Empeñada | Borde costero interno |
+| Punta de Choros | Litoral norte |
+| La Higuera | Zona interior árida |
+| Nantoco | Precordillera |
+| Zona Industrial | Polígono industrial urbano |
+| Pajonales | Zona mixta transicional |
+| Atacama Sur | Sector sur de la región |
+| Chañaral | Costa norte |
+| Los Loros | Zona de transición climática |
 
 ---
 
-## 🤖 Modelo Machine Learning en Detalle
+## Modelo de Clasificación
 
-### Algoritmo Base
 ```python
 RandomForestClassifier(
     n_estimators=10,
-    random_state=42,
-    max_depth=10
+    max_depth=10,
+    random_state=42
 )
+
+# Variables de entrada (features)
+X = ['temperatura',       # °C
+     'humedad_relativa',  # %
+     'velocidad_viento']  # m/s
+
+# Variable objetivo (target) — clasificación binaria
+y = (ICA > 100)
+# 1: contaminación moderada a alta
+# 0: contaminación baja o normal
 ```
 
-### Variables de Entrada (Features)
-```
-X = [
-    temperatura,       # °C
-    humedad_relativa,  # %
-    velocidad_viento   # m/s
-]
-```
+**Resultados de evaluación:**
 
-### Variable Objetivo (Target)
-```
-y = (ICA > 100)  # Clasificación binaria
-    1 = Contaminación moderada-alta
-    0 = Contaminación baja-normal
-```
+| Métrica | Valor |
+|---|---|
+| Accuracy | ~84% |
+| Recall | ~78% |
+| F1-score | ~81% |
 
-### Resultados
-```
-Precisión: ~84%
-Recall: ~78%
-F1-Score: ~81%
-Matriz de confusión: Disponible en notebook
-```
+La matriz de confusión completa está disponible en el notebook.
 
 ---
 
-## 🌡️ Índice de Calidad del Aire (ICA)
+## Índice de Calidad del Aire (ICA)
 
-Estándar utilizado: **CONAMA Chile + EPA USA**
+Clasificación según estándar CONAMA Chile / EPA USA:
 
-| Rango ICA | Estado | Acción Recomendada |
-|-----------|--------|-------------------|
-| 0-50 | 🟢 **BUENA** | Actividades normales |
-| 51-100 | 🟡 **MODERADA** | Grupos sensibles cuidado |
-| 101-150 | 🟠 **MALA** | Limitar actividades al aire libre |
-| 151-200 | 🔴 **MUY MALA** | Evitar salir; usar máscaras |
-| 201+ | 🔴🔴 **PELIGROSA** | Permanecer en interiores |
-
----
-
-## 📚 Recursos y Dependencias
-
-Ver `requirements.txt` para la lista completa de dependencias Python.
-
-### Principales:
-```
-pandas==2.0.0
-numpy==1.24.0
-jupyter==1.0.0
-folium==0.14.0
-scikit-learn==1.0.0
-matplotlib==3.5.0
-seaborn==0.12.0
-```
+| Rango ICA | Categoría | Recomendación |
+|---|---|---|
+| 0–50 | Buena | Actividades normales |
+| 51–100 | Moderada | Precaución para grupos sensibles |
+| 101–150 | Mala | Limitar actividades al aire libre |
+| 151–200 | Muy mala | Evitar exposición exterior |
+| >200 | Peligrosa | Permanecer en interiores |
 
 ---
 
-## 🤝 Contribuir
+## Contribuciones
 
-¡Las contribuciones son bienvenidas! Para contribuir:
+Las contribuciones son bienvenidas. Para contribuir:
 
-1. **Fork** el repositorio
-2. **Crea una rama** feature: `git checkout -b feature/TuMejora`
-3. **Commit** con mensajes claros:
+1. Haz un fork del repositorio
+2. Crea una rama con nombre descriptivo: `git checkout -b feature/nombre-mejora`
+3. Realiza commits con mensajes claros siguiendo la convención:
    ```
-   feat: Add new feature description
-   fix: Fix bug description
-   docs: Update documentation
+   feat: descripción de la nueva funcionalidad
+   fix: descripción de la corrección
+   docs: actualización de documentación
    ```
-4. **Push** a tu rama: `git push origin feature/TuMejora`
-5. **Abre un Pull Request** con descripción clara
+4. Abre un Pull Request con descripción detallada del cambio
 
-Ver [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo licencia **MIT**.
-
-Puedes usar, copiar, modificar y distribuir el código libremente.
-Solo requiere incluir la atribución al autor original.
-
-Ver [LICENSE](LICENSE) para el texto completo.
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para lineamientos completos.
 
 ---
 
-## 👨‍💻 Autor
+## Trabajo Futuro
 
-- **Nombre:** Miguel Lucero
-- **Profesión:** Meteorólogo (5+ años de experiencia)
-- **Especialización:** Análisis de datos climáticos + Machine Learning
-- **Email:** milucero@miuandes.cl
-- **GitHub:** [@miguellucero123](https://github.com/miguellucero123)
-- **Ubicación:** Viña del Mar, Región de Valparaíso, Chile
-
----
-
-## 📞 Contacto y Soporte
-
-- **Email:** [milucero@miuandes.cl](mailto:milucero@miuandes.cl)
-- **GitHub Issues:** [Reportar problemas](https://github.com/miguellucero123/WeatherLocal-Copiap-/issues)
-- **GitHub Profile:** [https://github.com/miguellucero123](https://github.com/miguellucero123)
+- API REST para integración con sistemas externos
+- Dashboard interactivo con Streamlit
+- Modelos LSTM para predicción de series temporales
+- Alertas automáticas por correo y SMS
+- Persistencia en base de datos PostgreSQL
+- Integración con APIs meteorológicas en tiempo real (DMC, NOAA)
+- Análisis de tendencias de cambio climático a largo plazo
+- Despliegue en infraestructura de nube (AWS / GCP / Azure)
 
 ---
 
-## 🙏 Agradecimientos
+## Versiones
 
-- **Folium** - Mapas interactivos de excelente calidad
-- **Pandas & NumPy** - Herramientas de análisis fundamentales
-- **Scikit-learn** - Ecosistema ML robusto y documentado
-- **Jupyter** - Entorno interactivo para exploración de datos
-- **OpenStreetMap** - Datos cartográficos de acceso público
-- **Comunidad meteorológica de Chile** - Inspiración y estándares
+| Versión | Fecha | Descripción |
+|---|---|---|
+| v1.2.0 | Marzo 2026 | Documentación mejorada, README actualizado |
+| v1.1.0 | Febrero 2026 | Incorporación del modelo de ML |
+| v1.0.0 | Enero 2026 | Lanzamiento inicial |
+
+Véase [CHANGELOG.md](CHANGELOG.md) para el historial completo.
 
 ---
 
-## 📚 Recursos Adicionales
+## Licencia
 
-### Documentación Oficial
-- [Folium Documentation](https://python-visualization.github.io/folium/)
+Distribuido bajo licencia **MIT**. El uso, copia, modificación y distribución del código son libres con atribución al autor original. Véase [LICENSE](LICENSE) para el texto completo.
+
+---
+
+## Autor y Contacto
+
+**Miguel Lucero**  
+Meteorólogo | Analista de datos climáticos  
+Viña del Mar, Región de Valparaíso, Chile
+
+- Correo: [milucero@miuandes.cl](mailto:milucero@miuandes.cl)
+- GitHub: [@miguellucero123](https://github.com/miguellucero123)
+- Issues: [Reportar un problema](https://github.com/miguellucero123/WeatherLocal-Copiap-/issues)
+
+---
+
+## Referencias y Recursos
+
+- [Folium — Python Visualization](https://python-visualization.github.io/folium/)
+- [Scikit-learn — Machine Learning in Python](https://scikit-learn.org/stable/documentation.html)
 - [Pandas User Guide](https://pandas.pydata.org/docs/)
-- [Scikit-learn Complete Guide](https://scikit-learn.org/stable/documentation.html)
-- [Jupyter Documentation](https://jupyter.org/documentation)
-
-### Meteorología
-- [WMO (Organización Meteorológica Mundial)](https://www.wmo.int/)
-- [Servicio Meteorológico de Chile](https://www.meteochile.gob.cl/)
-- [NOAA Weather Data](https://www.noaa.gov/)
-
-### Análisis de Datos
-- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/)
-- [Real Python - Pandas](https://realpython.com/learning-paths/pandas-data-science/)
+- [Dirección Meteorológica de Chile](https://www.meteochile.gob.cl/)
+- [Organización Meteorológica Mundial (WMO)](https://www.wmo.int/)
+- [NOAA Climate Data](https://www.noaa.gov/)
 
 ---
 
-## 🚀 Mejoras Futuras Planeadas
-
-- [ ] API REST para integración con otros sistemas
-- [ ] Dashboard Streamlit con interfaz más avanzada
-- [ ] Modelos LSTM para predicciones de series temporales
-- [ ] Alertas automáticas por email/SMS
-- [ ] Base de datos PostgreSQL para datos históricos
-- [ ] App móvil nativa (React Native)
-- [ ] Despliegue en cloud (AWS, Google Cloud, Azure)
-- [ ] Análisis de cambio climático a largo plazo
-- [ ] Integración con APIs meteorológicas en tiempo real
-- [ ] Visualización 3D avanzada con Plotly
-
----
-
-## 🐛 Historial de Cambios
-
-Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo de versiones.
-
-**Versiones Recientes:**
-- **v1.2.0** (Marzo 2026) - Documentación mejorada, README actualizado
-- **v1.1.0** (Febrero 2026) - Modelo ML añadido
-- **v1.0.0** (Enero 2026) - Lanzamiento inicial
-
----
-
-## ✨ Características Destacadas
-
-### 🌟 Único en su Tipo
-Este proyecto combina:
-- Expertise meteorológica profesional (5+ años)
-- Análisis avanzado de datos
-- Machine Learning aplicado
-- Visualización interactiva moderna
-
-### 🎯 Caso de Uso Real
-- Desarrollado para condiciones específicas de Atacama
-- Validado contra datos históricos reales
-- Aplicable a otras regiones climáticas
-
-### 💼 Production-Ready
-- Código documentado
-- Buenas prácticas implementadas
-- Escalable y mantenible
-- Listo para deployar
-
----
-
-## 📊 Estadísticas del Proyecto
-
-```
-Estaciones monitoreadas: 12
-Variables meteorológicas: 15+
-Datos históricos: Disponibles
-Modelo ML: Random Forest (84% accuracy)
-Cobertura geográfica: Región de Atacama
-Última actualización: Marzo 2026
-Licencia: MIT (Libre para usar)
-```
-
----
-
-## ⭐ Apoya Este Proyecto
-
-Si te resultó útil o interesante:
-- ⭐ **Dale una star** en GitHub
-- 🔗 **Comparte** con otros
-- 💬 **Reporta bugs** y sugiere mejoras
-- 🤝 **Contribuye** al proyecto
-
----
-
-**Última actualización:** Marzo 2026
-
-**Desarrollado por Miguel Lucero**
-
-Meteorólogo | Data Analyst | Developer
-
-**Viña del Mar, Región de Valparaíso, Chile** 🇨🇱
-
----
-
-© 2024-2026 Miguel Lucero. Todos los derechos reservados.
-**Para:** Miguel Lucero  
-**Email:** milucero@miuandes.cl  
+*Última actualización: Marzo 2026*
